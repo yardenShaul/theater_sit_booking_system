@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-family: Bahnschrift, sans-serif;
+    line-height: 1.8;
+    line-height: lh(26px);
+  }
+  
+  body {
+    margin: 0;
+    background-color: rgb(30, 30, 30);
+    color: aliceblue;
+    padding: 0 20px 20px 20px;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 500;
+    margin: 0 0 1rem;
+    line-height: lh(40px, 29px);
+    text-align: center;
+    font-size: 40px;
+  }
+  
+  .layout {
+    padding: 25px;
+  }
+  
+  .root-cmp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
