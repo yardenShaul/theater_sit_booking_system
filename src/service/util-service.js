@@ -14,12 +14,12 @@ function getDefaultTheater() {
 function makeTheaterSection(amount, section) {
     let theaterSection = []
     for (let i = 1; i < amount+1; i++) {
-        newArr.push(
+        theaterSection.push(
             {
                 _id: `${section}${i}`,
                 isBooked: false,
                 isSelected: false,
-                price: (section === 'l' || section === 'r')? 20 : 30
+                price: (section === 'L' || section === 'R')? 20 : 30
             }
         )
     }

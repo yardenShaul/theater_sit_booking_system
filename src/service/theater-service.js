@@ -1,5 +1,4 @@
 import { storageService } from "./async-storage.service";
-import { utilService } from "./util-service";
 const STORAGE_KEY = 'theater_DB'
 
 export const theaterService = {

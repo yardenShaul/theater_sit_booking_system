@@ -1,0 +1,11 @@
+.theater-app-main-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .main-theater{
+        display: flex;
+        flex-direction: row;
+        padding: 30px;
+        gap: 50px;
+    }
+}

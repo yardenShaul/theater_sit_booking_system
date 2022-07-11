@@ -1,0 +1,38 @@
+.main-section{
+    display: grid;
+    gap: 15px;
+}
+
+.right-section{
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    // grid-template-areas: 
+    // "seat seat seat . . . ."
+    // "seat seat seat . . . ."
+    // "seat seat seat seat . . ."
+    // "seat seat seat seat seat . ."
+    // "seat seat seat seat seat seat ."
+    // "seat seat seat seat seat seat seat"
+    // "seat seat seat seat seat seat seat"
+    // "seat seat seat seat seat seat seat"
+    // "seat seat seat seat seat seat seat";
+}
+
+.middle-section{
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.left-section{
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    // grid-template-areas: 
+    // ". . . . seat seat seat"
+    // ". . . . seat seat seat"
+    // ". . . seat seat seat seat"
+    // ". . . seat seat seat seat"
+    // ". . seat seat seat seat seat"
+    // ". seat seat seat seat seat seat"
+    // ". seat seat seat seat seat seat"
+    // "seat seat seat seat seat . .";
+}

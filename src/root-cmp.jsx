@@ -1,12 +1,11 @@
 import { AppHeader } from "./cmps/AppHeader";
-import { SectionsList } from "./cmps/SectionsList";
+import { TheaterApp } from "./pages/TheaterApp";
 
 export function RootCmp() {
-
   return (
     <div className="root-cmp">
       <AppHeader />
-      <SectionsList />
+      <TheaterApp />
     </div>
   );
 }

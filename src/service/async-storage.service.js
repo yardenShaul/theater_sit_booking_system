@@ -9,15 +9,13 @@ export const storageService = {
   remove,
 }
 
-function query(entityType, delay = 600) {
-  let entities =
-    JSON.parse(localStorage.getItem(entityType)) || utilService.getDefaultTheater()
-
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(entities)
-    }, delay)
-  })
+function query(entityType) {
+  let entities = JSON.parse(localStorage.getItem(entityType))
+  if (!entities) {
+    entities = utilService.getDefaultTheater()
+    _save(entityType,entities)
+  }
+  return entities
 }
 
 function get(entityType, entityId) {

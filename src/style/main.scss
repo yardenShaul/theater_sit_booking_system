@@ -2,6 +2,10 @@
 @import './basics/base';
 @import './basics/helpers';
 
+//pages:
+@import './pages/theater-app';
+
 //cmps:
 @import './cmps/app-header';
-@import './cmps/sections-list';
+@import './cmps/seat-list';
+@import './cmps/seat-preview';
