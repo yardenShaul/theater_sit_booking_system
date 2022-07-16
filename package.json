@@ -2,7 +2,7 @@
   "name": "theater_sit_booking_system",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://yardenshaul.github.io/theater_sit_booking_system/",
+  "homepage": "https://yardenshaul.github.io/theater_sit_booking_system",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
