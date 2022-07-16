@@ -10,3 +10,14 @@ export function loadTheater() {
         }
     }
 }
+
+export function bookSeat(seatId) {
+    return async (dispatch) => {
+        try {
+            const theater = await theaterService.bookSeat(seatId)
+            dispatch({type: 'SET_THATER', theater})
+        } catch (err) {
+            console.log('eror: ', err)
+        }
+    }
+}

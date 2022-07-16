@@ -3,31 +3,27 @@ const STORAGE_KEY = 'theater_DB'
 
 export const theaterService = {
     query,
-    getById,
-    save,
-    remove,
+    bookSeat
 }
 
 async function query() {
     return await storageService.query(STORAGE_KEY) 
 }
 
-async function getById(seatId) {
-    return await storageService.get(STORAGE_KEY, seatId)
+async function bookSeat(seatId) {
+    const theater = await query()
+    let updatedTheater = JSON.parse(JSON.stringify(theater))
+    const sectionIdx = theater.findIndex(section => section.name[0] === seatId[0])
+    const seatIdx = theater[sectionIdx].seats.findIndex(seat => seat._id === seatId)
+    let updatedSection = updatedTheater[sectionIdx]
+    let updatedSeat = updatedSection.seats[seatIdx]
+    updatedSeat = {...updatedSeat, isBooked: true}
+    updatedSection.seats.splice(seatIdx, 1, updatedSeat)
+    updatedTheater.splice(sectionIdx, 1, updatedSection)
+    return await _save(updatedTheater)
 }
 
-async function remove(seatId) {
-    await storageService.remove(STORAGE_KEY, seatId)
-    return storageService.query(STORAGE_KEY)
-}
-
-async function save(seat) {
-    let savedSeat
-    if (seat._id) {
-        savedSeat = await storageService.put(STORAGE_KEY, seat)
-    } else {
-      savedSeat = await storageService.post(STORAGE_KEY, seat)
-    }
-    return savedSeat
+async function _save(theater) {
+    return await storageService.put(STORAGE_KEY, theater)
 }
 

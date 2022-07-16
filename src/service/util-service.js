@@ -5,9 +5,9 @@ export const utilService = {
 
 function getDefaultTheater() {
     return [
-        utilService.makeTheaterSection(49, 'R'),
-        utilService.makeTheaterSection(72, 'C'),
-        utilService.makeTheaterSection(36, 'L')
+        {name: 'right', seats: utilService.makeTheaterSection(49, 'r')},
+        {name: 'center', seats: utilService.makeTheaterSection(72, 'c')},
+        {name: 'left', seats: utilService.makeTheaterSection(36, 'l')}        
     ]
 }
   

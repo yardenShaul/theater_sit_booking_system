@@ -1,6 +1,6 @@
 import { SeatPreview } from "./SeatPreview";
 
-export function SeatList({section}) {
+export function SeatList({section, onBookSeat}) {
 
     const getGridTamplate = () => {
         switch (section.length) {
@@ -15,8 +15,8 @@ export function SeatList({section}) {
 
     return (<div className="seat-list-main-container">
         <div className={'main-section ' + getGridTamplate()}>
-            {section.map(seat => {
-                return <SeatPreview seat={seat}/>
+            {section.map((seat, index) => {
+                return <SeatPreview seat={seat} onBookSeat={onBookSeat} key={index}/>
             })}
         </div>
     </div>)

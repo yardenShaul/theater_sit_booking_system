@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { SeatList } from '../cmps/SeatList'
-import { loadTheater } from '../store/actions/theaterActions'
+import { loadTheater, bookSeat } from '../store/actions/theaterActions'
 
 export function TheaterApp() {
     const { theater } = useSelector((storeState) => storeState.theaterModule)
@@ -11,14 +11,19 @@ export function TheaterApp() {
         dispatch(loadTheater())
     },[])
 
+    const onBookSeat = (seatId) => {
+        dispatch(bookSeat(seatId))
+    }
+
     if (!theater) return (<div><h2>Loading...</h2></div>)
 
     return ( <div className="theater-app-main-container">
         <div className="main-theater">
-            {theater.map(section => {
-                return <SeatList section={section} />
+            {theater.map((section, index) => {
+                return <SeatList section={section.seats} onBookSeat={onBookSeat} key={index}/>
             })}
         </div>
+
     </div>
     )
 }
